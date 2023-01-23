@@ -10,14 +10,9 @@ import Text from '@/components/Text'
 
 import homeImage from '../assets/illustration 1.png'
 
-import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete"
-import { useLoadScript } from '@react-google-maps/api'
+import {} from 'use-places-autocomplete'
 
 export default function Home() {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-    libraries: ["places"],
-  })
 
   const [search, setSearch] = useState('')
   const [userLatitude, setUserLatitude] = useState('')
@@ -42,10 +37,6 @@ export default function Home() {
       alert(search)
       setSearch('')
     }
-  }
-
-  if(!isLoaded) {
-    return <div>Loading...</div>
   }
 
   return (

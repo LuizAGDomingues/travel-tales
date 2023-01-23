@@ -10,7 +10,7 @@ import Text from '@/components/Text'
 
 import homeImage from '../assets/illustration 1.png'
 
-import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete"
+import usePlacesAutocomplete, { getGeocode, get } from "use-places-autocomplete"
 import { useLoadScript } from '@react-google-maps/api'
 
 export default function Home() {

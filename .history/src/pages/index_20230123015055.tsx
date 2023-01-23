@@ -10,7 +10,7 @@ import Text from '@/components/Text'
 
 import homeImage from '../assets/illustration 1.png'
 
-import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete"
+import usePlacesAutocomplete from "use-places-autocomplete"
 import { useLoadScript } from '@react-google-maps/api'
 
 export default function Home() {
@@ -44,10 +44,7 @@ export default function Home() {
     }
   }
 
-  if(!isLoaded) {
-    return <div>Loading...</div>
-  }
-
+  
   return (
     <>
       <Head>
