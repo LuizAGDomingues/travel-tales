@@ -63,7 +63,7 @@ export default function Home() {
                 center={{lat: userLatitude!, lng: userLongitude!}}
                 mapContainerStyle={{ width: '1109px', height: '301px', borderRadius: '15px' }}
               >
-                <Marker position={{ lat: userLatitude!, lng: userLongitude! }} />
+                <Marker position={{ lat: userLatitude, lng: userLongitude }} />
               </GoogleMap>
             }
             <div className='flex flex-col px-7 py-3 rounded-xl w-[24rem]' style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'}}>

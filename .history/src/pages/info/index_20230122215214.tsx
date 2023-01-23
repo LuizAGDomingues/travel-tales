@@ -59,12 +59,10 @@ export default function Home() {
             { !isLoaded 
             ? <Image src={mapImage} alt='Imagem padrão do google maps' />
             : <GoogleMap 
-                zoom={16} 
+                zoom={10} 
                 center={{lat: userLatitude!, lng: userLongitude!}}
-                mapContainerStyle={{ width: '1109px', height: '301px', borderRadius: '15px' }}
-              >
-                <Marker position={{ lat: userLatitude!, lng: userLongitude! }} />
-              </GoogleMap>
+                mapContainerStyle={{ maxWidth: '1109px', height: '301px' }}
+              ></GoogleMap>
             }
             <div className='flex flex-col px-7 py-3 rounded-xl w-[24rem]' style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'}}>
               <Text text='About' className='underline decoration-[#1A73E8] mb-6 text-center'/>

@@ -56,16 +56,16 @@ export default function Home() {
           <Text title text='Info' />
           <ExploreButtons.IconStart icon={<NavigationIcon sx={{ color: '#1A73E8', width: '30px', height: '30px' }}/>} text='Your selected spot' />
           <div className='flex items-center justify-center gap-11 mt-16'>
-            { !isLoaded 
-            ? <Image src={mapImage} alt='Imagem padrão do google maps' />
-            : <GoogleMap 
-                zoom={16} 
-                center={{lat: userLatitude!, lng: userLongitude!}}
-                mapContainerStyle={{ width: '1109px', height: '301px', borderRadius: '15px' }}
-              >
-                <Marker position={{ lat: userLatitude!, lng: userLongitude! }} />
-              </GoogleMap>
-            }
+            <div className='w-full max-w-[1109px] h-[301px]'>
+              { !isLoaded 
+              ? <Image src={mapImage} alt='Imagem padrão do google maps' />
+              : <GoogleMap 
+                  zoom={10} 
+                  center={{lat: userLatitude!, lng: userLongitude!}}
+                ></GoogleMap>
+              }
+
+            </div>
             <div className='flex flex-col px-7 py-3 rounded-xl w-[24rem]' style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'}}>
               <Text text='About' className='underline decoration-[#1A73E8] mb-6 text-center'/>
               <Text text='Location : ' className='mb-4'/>

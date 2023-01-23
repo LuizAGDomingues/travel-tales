@@ -18,16 +18,16 @@ export default function Home() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   })
 
-  const [userLatitude, setUserLatitude] = useState<number>()
-  const [userLongitude, setUserLongitude] = useState<number>()
+  const [userLatitude, setUserLatitude] = useState('')
+  const [userLongitude, setUserLongitude] = useState('')
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
         console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-        setUserLatitude(latitude)
-        setUserLongitude(longitude)
+        setUserLatitude(latitude.toString())
+        setUserLongitude(longitude.toString())
       },
       (error) => {
         console.error(error);
@@ -58,14 +58,8 @@ export default function Home() {
           <div className='flex items-center justify-center gap-11 mt-16'>
             { !isLoaded 
             ? <Image src={mapImage} alt='Imagem padrão do google maps' />
-            : <GoogleMap 
-                zoom={16} 
-                center={{lat: userLatitude!, lng: userLongitude!}}
-                mapContainerStyle={{ width: '1109px', height: '301px', borderRadius: '15px' }}
-              >
-                <Marker position={{ lat: userLatitude!, lng: userLongitude! }} />
-              </GoogleMap>
-            }
+            : <GoogleMap zoom={10} center={{lat: userLatitude, lng: userLongitude}} ></GoogleMap>
+          }
             <div className='flex flex-col px-7 py-3 rounded-xl w-[24rem]' style={{boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'}}>
               <Text text='About' className='underline decoration-[#1A73E8] mb-6 text-center'/>
               <Text text='Location : ' className='mb-4'/>
