@@ -9,7 +9,7 @@ function Loading() {
         <Skeleton variant="circular" width={210} height={118} />
       </div>
       <div className='w-full flex items-center justify-center mt-44 mb-20'>
-        <Skeleton variant="rounded" width={720} height={600} />
+        <Skeleton variant="rounded" width={720} height={800} />
       </div>
     </div>
   )
