@@ -21,7 +21,7 @@ export default function Home() {
     return <Loading />
   }
 
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY)
+  console.log()
 
   return (
     <>
