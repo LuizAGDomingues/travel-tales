@@ -18,7 +18,6 @@ import { useState, useEffect } from 'react'
 import { getNearbyPlaces } from '@/lib/getNearbyPlaces'
 import { useLoadScript } from '@react-google-maps/api'
 import Router from 'next/router'
-import Loading from '@/components/Loading'
 
 export default function Home() {
   const { isLoaded } = useLoadScript({
@@ -120,7 +119,7 @@ export default function Home() {
   }
 
   if(!isLoaded){
-    return <Loading />
+    return <Loading>
   }
 
   return (
