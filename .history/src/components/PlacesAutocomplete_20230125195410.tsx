@@ -31,11 +31,6 @@ function PlacesAutocomplete() {
       }
       const address = searchRef.current!.value;
       const coordinates = await getCoordinatesFromAddress(address);
-      if(coordinates!.lat.toString() === undefined) {
-        setSearch('')
-        alert('Erro inesperado')
-        return
-      }
       const coordinateLat = coordinates!.lat.toString()
       const coordinateLng = coordinates!.lng.toString()
       
@@ -51,8 +46,14 @@ function PlacesAutocomplete() {
     }
   }
 
+  const coordinateLat = userLatitude!
+  const coordinateLng = userLongitude!
+  const bounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(coordinateLat, coordinateLng)
+  );
+
   return (
-    <GoogleAutoComplete>
+    <GoogleAutoComplete options={{ bounds: bounds}}>
       <input 
         onKeyDown={handleSubmit}
         ref={searchRef}

@@ -10,8 +10,8 @@ export function getCoordinatesFromAddress(address: string) {
         const location = response.data.results[0].geometry.location;
         return { lat: location.lat, lng: location.lng };
       } else {
-        console.log(response.data.status)
         throw new Error('Unable to retrieve coordinates for the address');
+        console.log(response.data.status)
       }
     })
     .catch(error => {

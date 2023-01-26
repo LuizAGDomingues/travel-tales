@@ -54,7 +54,7 @@ export default function Home() {
         getNearbyPlaces(userLatitude, userLongitude, 'restaurant')
       ])
 
-      if(nearbyPark.name != undefined && nearbyMuseum.name != undefined && nearbyShopping.name != undefined && nearbyRestaurant.name != undefined){
+      if(nearbyPark.name  && nearbyMuseum && nearbyShopping && nearbyRestaurant){
         setClosestPark({
           name: nearbyPark.name,
           lat: nearbyPark.geometry.location.lat,
@@ -75,9 +75,6 @@ export default function Home() {
           lat: nearbyRestaurant.geometry.location.lat,
           lng: nearbyRestaurant.geometry.location.lng
         })
-      } else {
-        alert('Erro inesperado')
-        return
       }
     }
     if(userLatitude != undefined && userLongitude != undefined){

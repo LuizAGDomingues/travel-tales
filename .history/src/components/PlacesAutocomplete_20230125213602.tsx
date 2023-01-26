@@ -33,7 +33,7 @@ function PlacesAutocomplete() {
       const coordinates = await getCoordinatesFromAddress(address);
       if(coordinates!.lat.toString() === undefined) {
         setSearch('')
-        alert('Erro inesperado')
+        alert('E')
         return
       }
       const coordinateLat = coordinates!.lat.toString()

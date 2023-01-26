@@ -75,9 +75,6 @@ export default function Home() {
           lat: nearbyRestaurant.geometry.location.lat,
           lng: nearbyRestaurant.geometry.location.lng
         })
-      } else {
-        alert('Erro inesperado')
-        return
       }
     }
     if(userLatitude != undefined && userLongitude != undefined){

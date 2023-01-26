@@ -36,8 +36,8 @@ function PlacesAutocomplete() {
         alert('Erro inesperado')
         return
       }
-      const coordinateLat = coordinates!.lat.toString()
-      const coordinateLng = coordinates!.lng.toString()
+      const coordinateLat = coordinates.lat.toString()
+      const coordinateLng = coordinates.lng.toString()
       
       setSearch('');
 

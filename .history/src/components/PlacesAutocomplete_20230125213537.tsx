@@ -31,11 +31,7 @@ function PlacesAutocomplete() {
       }
       const address = searchRef.current!.value;
       const coordinates = await getCoordinatesFromAddress(address);
-      if(coordinates!.lat.toString() === undefined) {
-        setSearch('')
-        alert('Erro inesperado')
-        return
-      }
+      if()
       const coordinateLat = coordinates!.lat.toString()
       const coordinateLng = coordinates!.lng.toString()
       

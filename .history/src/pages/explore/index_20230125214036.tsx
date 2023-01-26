@@ -77,7 +77,6 @@ export default function Home() {
         })
       } else {
         alert('Erro inesperado')
-        return
       }
     }
     if(userLatitude != undefined && userLongitude != undefined){
