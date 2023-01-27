@@ -59,7 +59,7 @@ function ExploreButtonsIconBoth({ iconStart, iconEnd, text, className, link = ''
       startIcon={iconStart}
       endIcon={iconEnd}
       style={{textTransform: 'none', border: 'none', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)', borderRadius: '100px'}}
-      className={`py-4 px-6 text-black w-[31rem] ${className}`}
+      className={clsx('', className)}
     >
       <Text text={text}/>
     </Button>
