@@ -41,44 +41,37 @@ export default function Home() {
             }
             text="Something to eat"
           />
-          <div className="flex flex-col items-center gap-6 mt-10 mb-20">
-            <ExploreButtons.IconBoth
-              iconStart={
-                <LocalDiningIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.zomato.com/"
-              link="https://www.zomato.com/"
-            />
-            <ExploreButtons.IconBoth
-              iconStart={
-                <DeliveryDiningIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.swiggy.com/"
-              link="https://www.swiggy.com/"
-            />
-            <ExploreButtons.IconBoth
-              iconStart={
-                <LocalPizzaIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.doordash.com/"
-              link="https://www.doordash.com/"
-            />
-          </div>
+          "flex flex-col items-center gap-6 mt-10 mb-20"
+          <ExploreButtons.IconBoth
+            iconStart={
+              <LocalDiningIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.zomato.com/"
+            link="https://www.zomato.com/"
+          />
+          <ExploreButtons.IconBoth
+            iconStart={
+              <DeliveryDiningIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.swiggy.com/"
+            link="https://www.swiggy.com/"
+          />
+          <ExploreButtons.IconBoth
+            iconStart={
+              <LocalPizzaIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.doordash.com/"
+            link="https://www.doordash.com/"
+          />
         </section>
       </main>
     </>

@@ -1,11 +1,12 @@
 import Head from 'next/head';
 
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import HailIcon from '@mui/icons-material/Hail';
-import LocalTaxiIcon from '@mui/icons-material/LocalTaxi';
-import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
+import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
+import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
 
-import taxiImage from '@/assets/illustration 4.png';
+import foodImage from '@/assets/illustration 6.png';
 import { ExploreButtons } from '@/components/ExploreButtons';
 import Header from '@/components/Header';
 import HeadImage from '@/components/HeadImage';
@@ -24,59 +25,54 @@ export default function Home() {
       <main>
         <header>
           <Header />
-          <HeadImage source={taxiImage} text="Imagem de pessoas viajando" />
+          <HeadImage source={foodImage} text="Imagem de pessoas viajando" />
         </header>
         <section className="absolute">
           <IconsMenu />
         </section>
 
         <section className="flex flex-col items-center justify-center w-full mt-[17rem]">
-          <Text title text="Cab" />
+          <Text title text="Food" />
           <ExploreButtons.IconStart
             icon={
-              <LocalTaxiIcon
-                sx={{ color: '#1A73E8', width: '30px', height: '30px' }}
+              <RestaurantIcon
+                sx={{ color: '#F4B400', width: '30px', height: '30px' }}
               />
             }
-            text="Taxis and Cars"
+            text="Something to eat"
           />
           <div className="flex flex-col items-center gap-6 mt-10 mb-20">
             <ExploreButtons.IconBoth
               iconStart={
-                <HailIcon
+                <LocalDiningIcon
                   sx={{ width: '40px', height: '40px', marginRight: '5px' }}
                 />
               }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.olacabs.com/"
-              link="https://www.olacabs.com/"
+              iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+              text="https://www.zomato.com/"
+              link="https://www.zomato.com/"
             />
             <ExploreButtons.IconBoth
               iconStart={
-                <LocalTaxiIcon
+                <DeliveryDiningIcon
                   sx={{ width: '40px', height: '40px', marginRight: '5px' }}
                 />
               }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.uber.com/in/en/"
-              link="https://www.uber.com/in/en/"
+              iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+              text="https://www.swiggy.com/"
+              link="https://www.swiggy.com/"
             />
             <ExploreButtons.IconBoth
               iconStart={
-                <TwoWheelerIcon
+                <LocalPizzaIcon
                   sx={{ width: '40px', height: '40px', marginRight: '5px' }}
                 />
               }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.rapido.bike/"
-              link="https://www.rapido.bike/"
+              iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+              text="https://www.doordash.com/"
+              link="https://www.doordash.com/"
             />
+
           </div>
         </section>
       </main>

@@ -41,44 +41,37 @@ export default function Home() {
             }
             text="Hotels & Inns around"
           />
-          <div className="flex flex-col items-center gap-6 mt-10 mb-20">
-            <ExploreButtons.IconBoth
-              iconStart={
-                <HotelIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.oyorooms.com/"
-              link="https://www.oyorooms.com/"
-            />
-            <ExploreButtons.IconBoth
-              iconStart={
-                <HomeIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.airbnb.co.in/"
-              link="https://www.airbnb.co.in/"
-            />
-            <ExploreButtons.IconBoth
-              iconStart={
-                <BedIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.fabhotels.com/"
-              link="https://www.fabhotels.com/"
-            />
-          </div>
+          <div className="flex flex-col items-center gap-6 mt-10 mb-20"></div>
+          <ExploreButtons.IconBoth
+            iconStart={
+              <HotelIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.oyorooms.com/"
+            link="https://www.oyorooms.com/"
+          />
+          <ExploreButtons.IconBoth
+            iconStart={
+              <HomeIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.airbnb.co.in/"
+            link="https://www.airbnb.co.in/"
+          />
+          <ExploreButtons.IconBoth
+            iconStart={
+              <BedIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.fabhotels.com/"
+            link="https://www.fabhotels.com/"
+          />
         </section>
       </main>
     </>
