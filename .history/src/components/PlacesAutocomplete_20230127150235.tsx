@@ -1,0 +1,77 @@
+import Router from 'next/router';
+import { KeyboardEvent, useRef, useState } from 'react';
+
+import { getCoordinatesFromAddress } from '@/lib/getCoordinatesFromAdress';
+import { Autocomplete as GoogleAutoComplete } from '@react-google-maps/api';
+
+function PlacesAutocomplete() {
+  const [search, setSearch] = useState('');
+  const [errorRender, setErrorRender] = useState(false);
+  const [errorText, setErrorText] = useState('');
+  const searchRef = useRef<HTMLInputElement | null>(null);
+
+  const handleSubmit = async (event: KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      if (searchRef.current?.value.trim() === '') {
+        setSearch('');
+        setErrorRender(true);
+        setErrorText('Digite uma pesquisa válida');
+        return;
+      }
+      const address = searchRef.current?.value;
+      const coordinates = await getCoordinatesFromAddress(address);
+      console.log(coordinates);
+      if (coordinates.lat === undefined) {
+        setSearch('');
+        setErrorRender(true);
+        setErrorText('Ocorreu um erro ao buscar sua localização');
+        return;
+      }
+      const coordinateLat = coordinates!.lat.toString();
+      const coordinateLng = coordinates!.lng.toString();
+
+      setSearch('');
+
+      Router.push({
+        pathname: '/info',
+        query: {
+          lat: coordinateLat,
+          lng: coordinateLng
+        }
+      });
+    }
+  };
+
+  const handleMouseClick = () => {
+    setErrorRender(false);
+    setErrorText('');
+  };
+
+  return (
+    <>
+      <GoogleAutoComplete>
+        <input
+          onKeyDown={handleSubmit}
+          onMouseDown={handleMouseClick}
+          ref={searchRef}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search for your nearest picnic spot"
+          style={{
+            boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.3)',
+            padding: '0.75rem 1.25rem',
+            marginTop: '1.5rem'
+          }}
+          className="text-black w-[44rem] rounded-full font-poppins"
+        />
+      </GoogleAutoComplete>
+      {errorRender && (
+        <span className="text-red-600 font-poppins text-sm italic">
+          {errorText}
+        </span>
+      )}
+    </>
+  );
+}
+
+export default PlacesAutocomplete;
