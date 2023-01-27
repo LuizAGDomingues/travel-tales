@@ -72,7 +72,7 @@ export default function Home() {
           lat: nearbyRestaurant.geometry.location.lat,
           lng: nearbyRestaurant.geometry.location.lng
         })
-        setIsLoading(false)
+        setIsLoading
       } else {
         alert('Erro inesperado')
         console.log(nearbyPark)

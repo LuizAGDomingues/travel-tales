@@ -72,7 +72,6 @@ export default function Home() {
           lat: nearbyRestaurant.geometry.location.lat,
           lng: nearbyRestaurant.geometry.location.lng
         })
-        setIsLoading(false)
       } else {
         alert('Erro inesperado')
         console.log(nearbyPark)
@@ -147,8 +146,8 @@ export default function Home() {
           <div className='flex flex-wrap mb-10 items-center justify-center gap-5'>
             <ExploreButtons.IconEnd onClick={handleClickPark} icon={isLoading ? <CircularProgress /> : <ParkIcon sx={{ color: '#0F9D58', width: '32px', height: '32px' }}/>} text={closestPark.name} />
             <ExploreButtons.IconEnd onClick={handleClickMuseum} icon={isLoading ? <CircularProgress /> : <MuseumIcon sx={{ color: '#000', width: '32px', height: '32px' }}/>} text={closestMuseum.name} />
-            <ExploreButtons.IconEnd onClick={handleClickShopping} icon={isLoading ? <CircularProgress /> : <ShoppingBagIcon sx={{ color: '#000', width: '32px', height: '32px' }}/>} text={closestShopping.name} />
-            <ExploreButtons.IconEnd onClick={handleClickRestaurant} icon={isLoading ? <CircularProgress /> : <LocalDiningIcon sx={{ color: '#000', width: '32px', height: '32px' }}/>} text={closestRestaurant.name} />
+            <ExploreButtons.IconEnd onClick={handleClickShopping} icon={<ShoppingBagIcon sx={{ color: '#000', width: '32px', height: '32px' }}/>} text={closestShopping.name} />
+            <ExploreButtons.IconEnd onClick={handleClickRestaurant} icon={<LocalDiningIcon sx={{ color: '#000', width: '32px', height: '32px' }}/>} text={closestRestaurant.name} />
           </div>
         </section>
       </main>
