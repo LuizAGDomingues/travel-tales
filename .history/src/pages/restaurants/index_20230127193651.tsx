@@ -50,6 +50,7 @@ export default function Home() {
             iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
             text="https://www.zomato.com/"
             link="https://www.zomato.com/"
+            className="mt-16"
           />
           <ExploreButtons.IconBoth
             iconStart={

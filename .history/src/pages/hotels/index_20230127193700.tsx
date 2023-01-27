@@ -1,12 +1,12 @@
 import Head from 'next/head';
 
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
-import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
-import RestaurantIcon from '@mui/icons-material/Restaurant';
+import BedIcon from '@mui/icons-material/Bed';
+import HomeIcon from '@mui/icons-material/Home';
+import HotelIcon from '@mui/icons-material/Hotel';
+import PushPinIcon from '@mui/icons-material/PushPin';
 
-import foodImage from '@/assets/illustration 6.png';
+import hotelImage from '@/assets/illustration 5.png';
 import { ExploreButtons } from '@/components/ExploreButtons';
 import Header from '@/components/Header';
 import HeadImage from '@/components/HeadImage';
@@ -25,51 +25,52 @@ export default function Home() {
       <main>
         <header>
           <Header />
-          <HeadImage source={foodImage} text="Imagem de pessoas viajando" />
+          <HeadImage source={hotelImage} text="Imagem de pessoas viajando" />
         </header>
         <section className="absolute">
           <IconsMenu />
         </section>
 
-        <section className="flex flex-col items-center justify-center w-full mt-[17rem]">
-          <Text title text="Food" />
+        <section className="flex flex-col items-center justify-center w-full mt-[16rem]">
+          <Text title text="Hotels" />
           <ExploreButtons.IconStart
             icon={
-              <RestaurantIcon
-                sx={{ color: '#F4B400', width: '30px', height: '30px' }}
+              <PushPinIcon
+                sx={{ color: '#0F9D58', width: '30px', height: '30px' }}
               />
             }
-            text="Something to eat"
+            text="Hotels & Inns around"
           />
           <ExploreButtons.IconBoth
             iconStart={
-              <LocalDiningIcon
+              <HotelIcon
                 sx={{ width: '40px', height: '40px', marginRight: '5px' }}
               />
             }
             iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
-            text="https://www.zomato.com/"
-            link="https://www.zomato.com/"
+            text="https://www.oyorooms.com/"
+            link="https://www.oyorooms.com/"
           />
           <ExploreButtons.IconBoth
             iconStart={
-              <DeliveryDiningIcon
+              <HomeIcon
                 sx={{ width: '40px', height: '40px', marginRight: '5px' }}
               />
             }
             iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
-            text="https://www.swiggy.com/"
-            link="https://www.swiggy.com/"
+            text="https://www.airbnb.co.in/"
+            link="https://www.airbnb.co.in/"
           />
           <ExploreButtons.IconBoth
             iconStart={
-              <LocalPizzaIcon
+              <BedIcon
                 sx={{ width: '40px', height: '40px', marginRight: '5px' }}
               />
             }
             iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
-            text="https://www.doordash.com/"
-            link="https://www.doordash.com/"
+            text="https://www.fabhotels.com/"
+            link="https://www.fabhotels.com/"
+            className="mt-6 mb-10"
           />
         </section>
       </main>
