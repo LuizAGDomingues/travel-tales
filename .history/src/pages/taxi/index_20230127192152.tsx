@@ -40,44 +40,36 @@ export default function Home() {
             }
             text="Taxis and Cars"
           />
-          <div className="flex flex-col items-center mt-10 mb-20">
-            <ExploreButtons.IconBoth
-              iconStart={
-                <HailIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.olacabs.com/"
-              link="https://www.olacabs.com/"
-            />
-            <ExploreButtons.IconBoth
-              iconStart={
-                <LocalTaxiIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.uber.com/in/en/"
-              link="https://www.uber.com/in/en/"
-            />
-            <ExploreButtons.IconBoth
-              iconStart={
-                <TwoWheelerIcon
-                  sx={{ width: '40px', height: '40px', marginRight: '5px' }}
-                />
-              }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
-              text="https://www.rapido.bike/"
-              link="https://www.rapido.bike/"
-            />
-          </div>
+          <ExploreButtons.IconBoth
+            iconStart={
+              <HailIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.olacabs.com/"
+            link="https://www.olacabs.com/"
+          />
+          <ExploreButtons.IconBoth
+            iconStart={
+              <LocalTaxiIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.uber.com/in/en/"
+            link="https://www.uber.com/in/en/"
+          />
+          <ExploreButtons.IconBoth
+            iconStart={
+              <TwoWheelerIcon
+                sx={{ width: '40px', height: '40px', marginRight: '5px' }}
+              />
+            }
+            iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
+            text="https://www.rapido.bike/"
+            link="https://www.rapido.bike/"
+          />
         </section>
       </main>
     </>

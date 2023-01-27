@@ -58,6 +58,7 @@ interface ExploreButtonsIconBoth {
   iconEnd: ReactNode;
   text: string;
   link?: string;
+  className?: string;
   onClick?: () => void;
 }
 

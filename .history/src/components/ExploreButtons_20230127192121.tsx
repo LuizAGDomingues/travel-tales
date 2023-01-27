@@ -58,6 +58,7 @@ interface ExploreButtonsIconBoth {
   iconEnd: ReactNode;
   text: string;
   link?: string;
+  className?: string;
   onClick?: () => void;
 }
 
@@ -65,6 +66,7 @@ function ExploreButtonsIconBoth({
   iconStart,
   iconEnd,
   text,
+  className,
   link = '',
   onClick
 }: ExploreButtonsIconBoth) {
@@ -82,7 +84,7 @@ function ExploreButtonsIconBoth({
         boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.3)',
         borderRadius: '100px'
       }}
-      className={'py-4 px-6 text-black w-[31rem] mt-6'}
+      className={`py-4 px-6 text-black w-[31rem] mt-6`}
     >
       <Text text={text} />
     </Button>

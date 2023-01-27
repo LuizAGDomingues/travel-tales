@@ -40,7 +40,7 @@ export default function Home() {
             }
             text="Taxis and Cars"
           />
-          <div className="flex flex-col items-center mt-10 mb-20">
+          <div className=" mt-10 mb-20">
             <ExploreButtons.IconBoth
               iconStart={
                 <HailIcon

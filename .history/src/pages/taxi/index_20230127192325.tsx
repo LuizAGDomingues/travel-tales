@@ -40,7 +40,7 @@ export default function Home() {
             }
             text="Taxis and Cars"
           />
-          <div className="flex flex-col items-center mt-10 mb-20">
+          <div className="mt-10 mb-20">
             <ExploreButtons.IconBoth
               iconStart={
                 <HailIcon
@@ -59,9 +59,7 @@ export default function Home() {
                   sx={{ width: '40px', height: '40px', marginRight: '5px' }}
                 />
               }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
+              iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
               text="https://www.uber.com/in/en/"
               link="https://www.uber.com/in/en/"
             />
@@ -71,9 +69,7 @@ export default function Home() {
                   sx={{ width: '40px', height: '40px', marginRight: '5px' }}
                 />
               }
-              iconEnd={
-                <ArrowRightIcon sx={{ width: '30px', height: '30px' }} />
-              }
+              iconEnd={<ArrowRightIcon sx={{ width: '30px', height: '30px' }} />}
               text="https://www.rapido.bike/"
               link="https://www.rapido.bike/"
             />
