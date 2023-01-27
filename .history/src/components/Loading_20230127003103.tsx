@@ -3,7 +3,7 @@ import React from 'react'
 
 function Loading() {
   return (
-    <div className='w-screen h-screen p-96'>
+    <div className='w-screen h-screen'>
       <Skeleton variant='rounded' />
     </div>
   )
