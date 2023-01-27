@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
 async function getNearbyPlaces(latitude: string, longitude: string, type: string) {
   const location = `${latitude},${longitude}`;
-  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=5000&keyword=${type}&type=${type}&key=${GOOGLE_MAPS_API_KEY}`;
+  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=5000&&type=${type}&key=${GOOGLE_MAPS_API_KEY}`;
   try {
     const response = await axios.get(url, {
       headers: {

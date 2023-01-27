@@ -20,7 +20,7 @@ function PlacesAutocomplete() {
       const address = searchRef.current!.value;
       const coordinates = await getCoordinatesFromAddress(address);
       console.log(coordinates)
-      if(coordinates.lat === undefined) {
+      if(coordinates === undefined || coordinates === Error) {
         setSearch('')
         setErrorRender(true)
         setErrorText('Ocorreu um erro ao buscar sua localização')

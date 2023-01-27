@@ -13,17 +13,14 @@ function PlacesAutocomplete() {
     if(event.key === 'Enter') {
       if(searchRef.current!.value.trim() === '') {
         setSearch('')
-        setErrorRender(true)
-        setErrorText('Digite uma pesquisa válida')
+        alert('Digite uma pesquisa válida')
         return
       }
       const address = searchRef.current!.value;
       const coordinates = await getCoordinatesFromAddress(address);
-      console.log(coordinates)
-      if(coordinates.lat === undefined) {
+      if(coordinates!.lat.toString() === undefined) {
         setSearch('')
-        setErrorRender(true)
-        setErrorText('Ocorreu um erro ao buscar sua localização')
+        alert('Erro inesperado')
         return
       }
       const coordinateLat = coordinates!.lat.toString()
@@ -41,27 +38,19 @@ function PlacesAutocomplete() {
     }
   }
 
-  const handleMouseClick = () => {
-    setErrorRender(false)
-    setErrorText('')
-  }
-
   return (
-    <>
-      <GoogleAutoComplete>
-        <input 
-          onKeyDown={handleSubmit}
-          onMouseDown={handleMouseClick}
-          ref={searchRef}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder='Search for your nearest picnic spot' 
-          style={{boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.3)', padding: '0.75rem 1.25rem', marginTop: '1.5rem'}}
-          className='text-black w-[44rem] rounded-full font-poppins'
-        />
-      </GoogleAutoComplete>
-      {errorRender && <span className='text-red-600 font-poppins text-sm italic'>{errorText}</span>}
-    </>
+    <GoogleAutoComplete>
+      <input 
+        onKeyDown={handleSubmit}
+        ref={searchRef}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        placeholder='Search for your nearest picnic spot' 
+        style={{boxShadow: '0px 0px 6px rgba(0, 0, 0, 0.3)', padding: '0.75rem 1.25rem', marginTop: '1.5rem'}}
+        className='text-black w-[44rem] rounded-full font-poppins'
+      />
+    </GoogleAutoComplete>
+    {errorRender && <span></span>}
   )
 }
 

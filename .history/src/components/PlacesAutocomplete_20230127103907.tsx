@@ -13,14 +13,12 @@ function PlacesAutocomplete() {
     if(event.key === 'Enter') {
       if(searchRef.current!.value.trim() === '') {
         setSearch('')
-        setErrorRender(true)
-        setErrorText('Digite uma pesquisa válida')
+        alert('Digite uma pesquisa válida')
         return
       }
       const address = searchRef.current!.value;
       const coordinates = await getCoordinatesFromAddress(address);
-      console.log(coordinates)
-      if(coordinates.lat === undefined) {
+      if(coordinates === undefined || coordinates === Error) {
         setSearch('')
         setErrorRender(true)
         setErrorText('Ocorreu um erro ao buscar sua localização')
@@ -41,17 +39,12 @@ function PlacesAutocomplete() {
     }
   }
 
-  const handleMouseClick = () => {
-    setErrorRender(false)
-    setErrorText('')
-  }
-
   return (
     <>
       <GoogleAutoComplete>
         <input 
           onKeyDown={handleSubmit}
-          onMouseDown={handleMouseClick}
+          on
           ref={searchRef}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -60,7 +53,7 @@ function PlacesAutocomplete() {
           className='text-black w-[44rem] rounded-full font-poppins'
         />
       </GoogleAutoComplete>
-      {errorRender && <span className='text-red-600 font-poppins text-sm italic'>{errorText}</span>}
+      {errorRender && <span className='text-red-600 font-poppins text-sm'>{errorText}</span>}
     </>
   )
 }

@@ -14,6 +14,6 @@ export function getCoordinatesFromAddress(address: string) {
       }
     })
     .catch(error => {
-      return error
+      console.log(error);
     });
 }

@@ -60,7 +60,7 @@ function PlacesAutocomplete() {
           className='text-black w-[44rem] rounded-full font-poppins'
         />
       </GoogleAutoComplete>
-      {errorRender && <span className='text-red-600 font-poppins text-sm italic'>{errorText}</span>}
+      {errorRender && <span className='text-red-600 font-poppins font-semibold text-sm italic'>{errorText}</span>}
     </>
   )
 }
